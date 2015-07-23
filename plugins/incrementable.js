@@ -22,7 +22,7 @@ var _ = window.Incrementable = function(textField, multiplier, units) {
 	this.multiplier = multiplier || function(evt) {
 		if (evt.shiftKey) { return 10; }
 		
-		if (evt.ctrlKey) { return .1; }
+		if (evt.altKey) { return .1; }
 		
 		return 1;
 	}

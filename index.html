@@ -10,235 +10,641 @@
 	<link href="talk.css" rel="stylesheet" />
 	<script src="prefixfree.min.js"></script>
 </head>
-<body data-duration="10">
+<body data-duration="40">
 
-<header id="intro" class="slide">
-	<h1>
-		<object data="logo.svg" width="100%" type="image/svg+xml">
-			<img src="logo.png" alt="CSSS: CSS-based SlideShow System" />
-		</object>
-	</h1>
-	<p class="attribution">By Lea Verou</p>
-</header>
 <section>
 	<header class="slide">
-		<h1>Introduction</h1>
+		<h1>Let's create a pie chart!</h1>
 	</header>
 	
-	<section class="slide" title="CSSS: Introduction">
-		<h2>What is it?</h2>
-		<p>A simple framework for building presentations with modern web standards</p>
-		<ul>
-			<li class="delayed">An HTML file contains the whole presentation</li>
-			<li class="delayed">Themes as CSS files</li>
-			<li class="delayed">JavaScript handles what CSS can't (keyboard shortcuts etc)</li>
-		</ul>
+	<section class="slide">
+		<h2>Pie charts!</h2>
+		<p>They're anywhere!</p>
 	</section>
 	
 	<section class="slide">
-		<h2>History</h2>
-		<ul>
-			<li class="delayed">I had to create a presentation for my talk at <a href="http://front-trends.com">Front Trends 2010</a></li>
-			<li class="delayed">The only web-based presentation systems I knew of didn't fit my needs</li>
-			<li class="delayed">&hellip;so I rolled up my own</li>
-			<li class="delayed">FT2010 attendees asked me to release it</li>
-			<li class="delayed">and here it is! ;-)</li>
-		</ul>
+        <div style="text-align:center"><img src="img/ga.png" height="406" ></div>
 	</section>
-	
-	<section class="slide" id="navigation">
-		<h2>Navigation</h2>
-		<p>Only through keyboard for now :(</p>
-		<ul>
-			<li>→ or ↓ to advance to the next slide or incrementally displayed item</li>
-			<li>← or ↑ to go to the previous slide or incrementally displayed item</li>
-			<li>Ctrl* + → or Ctrl* + ↓ to jump to the next slide</li>
-			<li>Ctrl* + ← or Ctrl* + ↑ to jump to the previous slide</li>
-			<li>Home to go to the first slide, End to go to the last</li>
-			<li>Ctrl* + G to jump to an arbitrary slide (by slide number or identifier)</li>
-		</ul>
-		<p>* Ctrl or Shift actually. Only Shift works in Opera.</p>
-	</section>
+
+    <section class="slide">
+        <h2>On Compenies Dashboard</h2>
+        <div style="text-align:center"><img src="img/ga.png" height="406" ></div>
+    </section>
+
 </section>
+<section>
 
+	<section class="slide">
+        <div class="left-col">
+			<style scoped>
+				.pie{
+					height: 0;
+					width: 0;
+					background: none;
+				}
+			</style>
+            <div class="pie">
+            </div>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+
+}</textarea>
+
+
+			<p class="presenter-notes">width:0; height:0; border: 150px solid yellow; border-radius:50%; border-right-color: yellowgreen; transform: rotate(-45deg)</p>
+
+		</div>
+
+	</section>
+	
+	<section class="slide">
+		<div class="center"><img src="img/emoji1.png"></div>
+	</section>
+
+	</section>
 <section>
 	<header class="slide">
-		<h1>Features</h1>
+		<h1>How about pseudo elements?</h1>
 	</header>
-	
-	<section class="slide">
-		<h2>Thumbnail view</h2>
-		<p>Press Ctrl+H (or Shift+H if you're in Opera) now.</p>
-		<p class="delayed">Cool, huh? You can press Ctrl+Shift+H to see all slides (warning: can be slow!)</p>
-	</section>
-	
-	<section class="slide">
-		<h2>Timer</h2>
-		<ul>
-			<li>Timer in the form of a progress bar on the top</li>
-			<li>Define the talk duration with the attribute <code>data-duration</code> on the <code>body</code></li>
-			<li>Style the timer and the end state with the selectors <code>#timer</code> and <code>#timer.end</code> respectively.</li>
-		</ul>
-	</section>
-	
-	<section class="slide">
-		<h2>Presenter view</h2>
-		<p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).</p>
-		<p class="presenter-notes">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	
-	<section class="slide">
-		<style scoped>
-			h2 {
-				font-size: 200%;
-				font-weight: bold;
-			}
-		</style>
-		<h2><code>&lt;style scoped /&gt;</code></h2>
-		<p>You can use the HTML5 <code>scoped</code> attribute on style elements in slides, to only style the current slide or inside sections that include multiple slides to style all of them and nothing else.</p>
-		<p>For example, inspect this slide and then run <code>$$('style[scoped]')[0].sheet.cssRules[0].selectorText</code> in the console to see how the original selector gets changed.</p>
-	</section>
-	
-	<section class="slide">
-		<h2>More features</h2>
-		<ul>
-			<li class="delayed">IDs are dynamically assigned by JavaScript&hellip;</li>
-			<li class="delayed">&hellip;but you can also assign your own, bringing the best of both worlds</li>
-			<li class="delayed">Incremental display of slide contents (just add <code>class="delayed"</code>)</li>
-			<li class="delayed">Slide scaling based on window size (size everything you want to be scalable in ems)</li>
-			<li class="delayed">Document.title changing according to slide title (fetched either from the <code>title</code> attribute or the slide's heading)</li>
-		</ul>
-	</section>
-	
-	<section class="slide">
-		<h2>Drawbacks</h2>
-		<ul>
-			<li>Only supports modern browsers. Why?
-				<ul>
-					<li>More lightweight</li>
-					<li>Easier to understand code</li>	
-					<li>It's a presentation, so the environment is controlled anyway</li>
-				</ul>
-			</li>
-			<li>No mouse click to advance to the next slide. I consider it annoying.</li>
-			<li>Doesn't work in mobile :(</li>
-		</ul>
-	</section>
-</section>
+    <section class="slide">
+        <h2>Some transform clarification</h2>
+        <ul>
+            <style scoped>
+                @keyframes skew{
+                    50%{ transform: skew(45deg) }
+                    100% {transform: skew(0deg)}
+                }
+                @keyframes rotate{
+                    50%{ transform: rotate(45deg) }
+                    100% {transform: rotate(0deg)}
+                }
+                @keyframes scale{
+                    50%{ transform: scale(1.5) }
+                    100% {transform: scale(1)}
+                }
+                div{
+                    display:inline-block; width: 100px; height: 100px; margin: 0 15px;
+                }
+            </style>
+            <li class="delayed">
+                Scale
+                <div style="animation: 2s infinite scale;background: #22ff1f; "></div>
+            </li>
+            <li class="delayed">
+                Rotate
+                <div style="animation: 2s infinite rotate;background: #ff8f00; "></div>
+            </li>
 
-<section>
-	<header class="slide">
-		<h1>Plugins</h1>
-	</header>
-	
+            <li class="delayed">
+                Skew
+                <div style="animation: 2s infinite skew;background: #ff0300; "></div>
+            </li>
+
+        </ul>
+
+    </section>
 	<section class="slide">
-		<h2>Plugin: CSS Snippets</h2>
-		<pre>new CSSSnippet(document.getElementById('snippet'));</pre>
-		<ul>
-			<li>Dynamically edit CSS and reflect the results in any element's style
-				<ul>
-					<li>Which one? Specify a selector with the <code>data-subject</code> attribute or leave blank for the slide to be the subject</li>
-				</ul>
-			<li>Automatically prefixes CSS3 properties/values, when needed
-				<ul>
-					<li>Also does it with the style attribute (statically) if the element is not a text field (doesn't work in IE and Firefox 3.6)</li>
-				</ul>
-			</li>
-			<li>Textarea automatically adjusts rows/font-size on line break (use class <code>dont-adjust</code> to turn off)</li>
-		</ul>
+		<div class="left-col">
+			<div class="pie">
+			</div>
+			</div>
+		</div>
+		<div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+
+}</textarea>
+		</div>
 	</section>
-	
+
 	<section class="slide">
-		<h2>CSS Snippets demo</h2>
-		<p>Edit the following CSS code:</p>
-		<textarea class="snippet">background-color:red;
-background-image: linear-gradient(red, #600)</textarea>
-	</section>
-	
-	<section class="slide" id="animation-demo">
-		<h2>CSS Snippets: raw CSS</h2>
-		<textarea class="snippet" data-raw>@keyframes rainbow {
-	from, to { background: red }
-	16% { background: yellow }
-	33% { background: green }
-	50% { background: aqua }
-	66% { background: blue }
-	83% { background: fuchsia }
+		<div class="left-col">
+			<div class="pie">
+			</div>
+			<div class="pie over-half" style="transform: scale(0.75)">
+			</div>
+		</div>
+		<div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+border-radius: 50%;
+overflow: hidden;
 }
 
-#animation-demo { animation: 30s rainbow infinite; }</textarea>
+.pie::before{
+background: yellowgreen;
+padding: 50%;
+content: "";
+position: absolute;
+bottom: 50%;
+left: 50%;
+transform: skewY(40deg) scaleX(-1) rotate(-90deg);
+transform-origin: bottom left;
+}
+
+.pie.over-half{ background: yellowgreen;}
+.pie.over-half::before{
+background: #ff8800;
+transform: rotate(-90deg) skew(30deg);
+ }</textarea>
+		</div>
 	</section>
-	
+
 	<section class="slide">
-		<h2>Plugin: CSS Controls</h2>
-		<ul>
-			<li>Use sliders and other controls to adjust CSS values
-				<ul>
-					<li>Which one? Specify a selector with the <code>data-subject</code> attribute or leave blank for the slide to be the subject</li>
-					<li>Specify style with <code>data-style</code> (use <code>{value}</code> where the result will be)</li>
-				</ul>
-			<li>Automatically prefixes CSS3 properties/values, when needed</li>
-		</ul>
-	</section>
-	
-	<section class="slide" id="css-controls-demo">
-		<h2>CSS Controls demo</h2>
-		<label>Slide lightness: 
-			<input type="range" min="0" max="255" value="128" data-style="background-color:rgb({value}, {value}, {value});" class="css-control" />
-		</label>
-		<label>
-			border-width:
-			<input type="number" min="0" max="60" value="30" data-style="border-width: {value}px;" class="css-control" size="5" />
-		</label>
-		<label>
-			font-family:
-			<select data-style="font-family: {value};" class="css-control">
-				<option selected>sans-serif</option>
-				<option>Georgia, serif</option>
-				<option>Consolas, monospace</option>
-				<option>'Trebuchet MS', sans-serif</option>
-			</select>
-		</label>
-	</section>
-	
-	<section class="slide">
-		<h2>Plugin: Code highlight</h2>
-		<ul>
-			<li>Syntax highlighting for every <code>&lt;code&gt;</code> element with a <code>lang</code> attribute.</li>
-			<li>Only highlights when the slide becomes active, for performance</li>
-			<li>Currently only supports JavaScript, but it's easy to add any language</li>
-			<li>Styling done through easy to understand classes like <code>.string</code> or <code>.comment</code></li>
-		</ul>
-	</section>
-	
-	<section class="slide">
-		<h2>Code highlight example</h2>
-		<pre><code lang="javascript">// Comment
-document.addEventListener('DOMAttrModified',function(e) {
-  var node = e.target, attr = e.attrName;
-  if(/^input$/i.test(node.nodeName) 
-    &amp;&amp; (attr === 'placeholder' || attr === 'value')
-    || foo > 5)
-      Placeholder.update(node);
-}, false);</code></pre>
+		<style scoped>
+			.baby{
+				width: 100%;
+				height: 100%;
+				background: url(img/baby.jpg) no-repeat center center;
+			}
+		</style>
+		<div class="baby"></div>
 	</section>
 </section>
-<footer class="slide" title="The End">
-	<h2>Thank you!</h2>
-	<p>Get it or contribute at <a href="http://github.com/LeaVerou/CSSS">http://github.com/LeaVerou/CSSS</a></p>
-	<p>Credits:</p>
-	<ul>
-		<li><a href="http://lukeroberts.us/2008/12/wallpaper-colourful-wood/">Colored wood background by Luke Roberts</a></li>
-		<li>The name CSSS is actually inspired by S5, as you could probably guess ;-)</li>
-		<li>A big thanks to the community at Github for various contributions to this project</li>
-	</ul>
-</footer>
+<section>
+	<header class="slide">
+		<h1>It this a good solution?</h1>
+	</header>
+	
+	<section class="slide">
+		<h2>A good solution holds 3 things:</h2>
+		<ul>
+		<li class="delayed">
+			Flexibility
+		</li>
+			<li class="delayed">
+			Extensibility
+		</li>
+			<li class="delayed">
+			 Maintainability
+		</li></ul>
+	</section>
+	
+	<section class="slide" style="background: #0e6d15;">
+		<h2>Flexibility</h2>
+<ul>
+	<li>Possible to change?</li>
+	<li>Possible to change inline?</li>
+	<li>How many edits?</li>
+</ul>
+	</section>
+		<section class="slide" style="background: #797216;">
+		<h2>Extensibility</h2>
+<ul>
+	<li>can I have multiple segments?</li>
+	<li>Can I animate it?</li>
+	<li>Can I apply effects (gradients, hover) ?</li>
+</ul>
+	</section>
+		<section class="slide" style="background: #161944;">
+		<h2>Maintainability</h2>
+<ul>
+	<li>How much code?</li>
+	<li>Extra elements?</li>
+	<li>Straightforward</li>
+</ul>
+	</section>
 
+    <section class="slide">
+        <div class="left-col">
+            <div class="pie">
+            </div>
+            <div class="pie over-half" style="transform: scale(0.75)">
+            </div>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+border-radius: 50%;
+overflow: hidden;
+}
+
+.pie::before{
+background: yellowgreen;
+padding: 50%;
+content: "";
+position: absolute;
+bottom: 50%;
+left: 50%;
+transform: skewY(40deg) scaleX(-1) rotate(-90deg);
+transform-origin: bottom left;
+}
+
+.pie.over-half{ background: yellowgreen;}
+.pie.over-half::before{
+background: #ff8800;
+transform: rotate(-90deg) skew(30deg);
+ }</textarea>
+        </div>
+    </section>
+
+    <section class="slide" style="background: #0e6d15;">
+        <h3>Flexibility</h3>
+        <h2>Skewed pseudo-element</h2>
+        <p>
+            <img height="64" align="top" src="img/smile.png"> Color: 1 Edit<br/>
+            <img height="64" align="top" src="img/smile.png"> Size: 1 Edit<br/>
+            <img height="64" align="top" src="img/poop.png"> Value: 4 Edit<br/>
+            <img height="64" align="top" src="img/poop.png">No possible to change inline<br/>
+        </p>
+
+    </section>
+
+
+    <section class="slide" style="background: #797216;">
+        <h3>Extensibility</h3>
+        <h2>Skewed pseudo-element</h2>
+        <p>
+            <img height="64" align="top" src="img/b.png"> Multiple values via extra children<br/>
+            <img height="64" align="top" src="img/b.png"> Possible (but painful) to animate<br/>
+            <img height="64" align="top" src="img/b.png"> some effects possible<br/>
+        </p>
+
+    </section>
+    <section class="slide" style="background: #161944;">
+        <h3>Maintainability</h3>
+        <h2>Skewed pseudo-element</h2>
+        <p>
+            <img height="64" align="top" src="img/smile.png">No extra elements<br/>
+            <img height="64" align="top" src="img/poop.png"> 12 decelerations<br/>
+            <img height="64" align="top" src="img/poop.png"> Messy and hacky<br/>
+        </p>
+
+    </section>
+    </section>
+<section>
+    <header class="slide">
+        <h1>Using Gradients and Rotations</h1>
+    </header>
+    <section class="slide">
+        <div class="left-col">
+            <div class="pie">
+            </div>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+border-radius: 50%;
+}
+
+.pie::before{
+display: block;
+content: "";
+}
+</textarea>
+        </div>
+    </section>
+    <section class="slide">
+        <div class="left-col">
+            <div class="pie">
+            </div>
+
+            <div class="pie over-half" style="transform:scale(0.75)">
+
+            </div>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+border-radius: 50%;
+background: #0ac linear-gradient(to right, #0ac 50%, currentColor 50%);
+color: gold;
+                }
+
+.pie::before{
+display: block;
+content: "";
+height: 100%;
+background: #0ac;
+margin-left: 50%;
+border-radius: 0 100% 100% 0 / 50%;
+transform: rotate(.6turn);
+transform-origin: left;
+}
+.pie.over-half::before{
+xoutline: 3px dashed white;
+}</textarea>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div class="left-col">
+            <div class="pie">
+            </div>
+
+            <div class="pie over-half" style="transform:scale(0.75)">
+
+            </div>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+border-radius: 50%;
+background: #0ac linear-gradient(to right, #0ac 50%, currentColor 50%);
+color: gold;
+}
+
+@keyframes spin{
+ to{ transform: rotate(0.5turn); }
+}
+@keyframes color{
+ 50%{ background-color: currentColor;}
+}
+.pie::before{
+display: block;
+content: "";
+height: 100%;
+background: #0ac;
+margin-left: 50%;
+border-radius: 0 100% 100% 0 / 50%;
+transform: rotate(0turn);
+transform-origin: left;
+animation: 1s spin linear infinite, 2s color infinite step-end;
+}</textarea>
+        </div>
+    </section>
+
+    <section class="slide">
+        <style scoped>
+            div.cube{ width: 4em; height:  4em; background-color: white; float: left; margin:1em;}
+        </style>
+        <div class="cube "></div>
+        <div class="cube p25"></div>
+        <div class="cube p50"></div>
+        <div class="cube p75"></div>
+        <div class="cube p100"></div>
+    <textarea class="snippet" data-raw style="height:50%;">.cube{}
+        </textarea>
+
+    </section>
+    <section class="slide">
+        <style scoped>
+            div.cube{ width: 4em; height:  4em; background-color: white; float: left; margin:1em;}
+        </style>
+        <div class="cube "></div>
+        <div class="cube p25"></div>
+        <div class="cube p50"></div>
+        <div class="cube p75"></div>
+        <div class="cube p100"></div>
+    <textarea class="snippet" data-raw style="height:50%;">@keyframes color{
+from{background: white;}
+to{background: black;}}
+.cube{ animation: 100s color;
+animation-play-state: paused;
+animation-deley: -100s;
+animation-fill-mode: forwards;
+ }
+
+.p25{animation-delay:-25s;}
+.p75{animation-delay:-50s;}
+.p50{animation-delay:-50s;}
+.p100{ animation-delay: -100s;}
+
+        </textarea>
+
+    </section>
+
+    <section class="slide">
+        <div class="left-col">
+            <div class="pie">
+            </div>
+
+            <div class="pie over-half" style="transform:scale(0.75)">
+
+            </div>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+border-radius: 50%;
+background: #0ac linear-gradient(to right, #0ac 50%, currentColor 50%);
+color: gold;
+}
+
+@keyframes spin{
+ to{ transform: rotate(0.5turn); }
+}
+@keyframes color{
+ 50%{ background-color: currentColor;}
+}
+.pie::before{
+display: block;
+content: "";
+height: 100%;
+background: #0ac;
+margin-left: 50%;
+border-radius: 0 100% 100% 0 / 50%;
+transform: rotate(0turn);
+transform-origin: left;
+animation: 50s spin linear 2, 100s color step-end infinite;
+
+animation-play-state: paused;
+animation-delay: -99s;
+}</textarea>
+        </div>
+    </section>
+
+
+    <section class="slide" style="background: #0e6d15;">
+        <h3>Flexibility</h3>
+        <h2>Rotated pseudo-element</h2>
+        <p>
+            <img height="64" align="top" src="img/smile.png"> Color: 1 Edit<br/>
+            <img height="64" align="top" src="img/b.png"> Size: 2 Edit<br/>
+            <img height="64" align="top" src="img/smile.png"> Value: 1 Edit<br/>
+            <img height="64" align="top" src="img/smile.png">Possible to set values inline<br/>
+        </p>
+
+    </section>
+
+    <section class="slide" style="background: #797216;">
+        <h3>Extensibility</h3>
+        <h2>Rotated pseudo-element</h2>
+        <p>
+            <img height="64" align="top" src="img/poop.png"> Multiple values are not possible<br/>
+            <img height="64" align="top" src="img/smile.png"> Possible to animate<br/>
+            <img height="64" align="top" src="img/poop.png"> Can't really do any effects...<br/>
+        </p>
+
+    </section>
+    <section class="slide" style="background: #161944;">
+        <h3>Maintainability</h3>
+        <h2>Rotated pseudo-element</h2>
+        <p>
+            <img height="64" align="top" src="img/smile.png">No extra elements<br/>
+            <img height="64" align="top" src="img/poop.png"> 12 decelerations<br/>
+            <img height="64" align="top" src="img/b.png"> A bit less hacky<br/>
+        </p>
+
+    </section>
+</section>
+
+<section>
+    <header class="slide">
+        <h1>Can it be better?</h1>
+        <h2 class="delayed">How about SVG?</h2>
+    </header>
+
+<section class="slide">
+
+    <div class="delayed">
+        <pre><code lang="javascript" data-highlighted="html">&lt;svg viewBox=&quot;0 0 10 100&quot; class=&quot;svg-pie&quot;&gt;
+&lt;path d=&quot;M 50,0 a 50,50 0 0, 1 40,80 L 50,50 Z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt; </code></pre>
+        <style scoped>
+            .svg-pie1{
+                background: #0ac;
+                border-radius: 50%;
+                overflow: visible;
+                height: 10em; width: 10em;
+                margin: 0 auto;
+            }
+            .svg-pie1 path{
+                fill: gold;
+            }
+        </style>
+        <svg viewBox="0 0 100 100" class="svg-pie1">
+            <path d="M 50,0 a 50,50 0 0, 1 40,80 L 50,50 Z"></path>
+        </svg>
+    </div>
+</section>
+
+    <section class="slide">
+        <style scoped>
+            .svg-pie{
+                width:7em;
+                height: 7em;
+            }
+        </style>
+        <div class="left-col">
+            <svg viewBox="0 0 64 64" class="svg-pie">
+               <ci  rcle r="25%" cx="50%" cy="50%"></circle>
+            </svg>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.svg-pie{}</textarea>
+        </div>
+    </section>
+    <section class="slide">
+        <style scoped>
+            .svg-pie{
+                width:7em;
+                height: 7em;
+                background: transparent;
+            }
+        </style>
+        <div class="left-col">
+            <svg viewBox="0 0 64 64" class="svg-pie">
+               <circle r="25%" cx="50%" cy="50%"></circle>
+            </svg>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.svg-pie{ background: #0ac !important;
+border-radius: 50%;
+transform: rotate(-90deg) }
+
+.svg-pie circle{
+fill: none;
+stroke: gold;
+stroke-width: 32;
+stroke-dasharray: 92 100;
+}</textarea>
+        </div>
+    </section>
+    <section class="slide">
+        <style scoped>
+            .ni_pie{ height: 15em; width: 15em;}
+        </style>
+        <h1>NI Employees by departments: </h1>
+        <div>
+        <svg viewBox="0 0 64 64" class="ni_pie">
+            <circle r="25%" cx="50%" cy="50%" class="f" ></circle>
+            <circle r="25%" cx="50%" cy="50%" class="h" ></circle>
+            <circle r="25%" cx="50%" cy="50%" class="m" ></circle>
+            <circle r="25%" cx="50%" cy="50%" class="p" ></circle>
+            <circle r="25%" cx="50%" cy="50%" class="r" ></circle>
+            <circle r="25%" cx="50%" cy="50%" class="b" ></circle>
+            <circle r="25%" cx="50%" cy="50%" class="s" ></circle>
+            <circle r="25%" cx="50%" cy="50%" class="c" ></circle>
+        </svg>
+            <pre style="width:35%; float:right;">
+Finance	        14	9%
+HR	            8	5%
+Marketing	    39	25%
+Product	        17	11%
+R&D	            61	39%
+Sales & Biz Dev	14	9%
+Strategy	    2	1%
+CEO	            1	1%
+Sum	            156
+            </pre>
+            			<textarea class="snippet" data-raw>.ni_pie circle{ stroke-width:32; }
+.ni_pie circle{ stroke-width:32; fill:transparent; }
+.f{stroke-dashoffset: 0; stroke:black; stroke-dasharray:9 100;}
+.h{stroke-dashoffset: -9; stroke:gold; stroke-dasharray:5 100;}
+.m{stroke-dashoffset: -13; stroke:aqua; stroke-dasharray:25 100;}
+.p{stroke-dashoffset: -38; stroke:red; stroke-dasharray:11 100;}
+.r{stroke-dashoffset: -49; stroke:orange; stroke-dasharray:40 100;}
+.b{stroke-dashoffset: -89; stroke:yellowgreen; stroke-dasharray:9 100;}
+.s{stroke-dashoffset: -98; stroke:lime; stroke-dasharray:1 100;}
+.c{stroke-dashoffset: -99; stroke:magenta; stroke-dasharray:1 100;}
+                        </textarea>
+
+        </div>
+    </section>
+
+    <section class="slide" style="background: #0e6d15;">
+        <h3>Flexibility</h3>
+        <h2>SVG stroke dasharray</h2>
+        <p>
+            <img height="64" align="top" src="img/smile.png"> Color: 1 Edit<br/>
+            <img height="64" align="top" src="img/b.png"> Size: 2 Edit<br/>
+            <img height="64" align="top" src="img/smile.png"> Value: 1 Edit<br/>
+            <img height="64" align="top" src="img/smile.png">Possible to set values inline<br/>
+        </p>
+
+    </section>
+
+    <section class="slide" style="background: #797216;">
+        <h3>Extensibility</h3>
+        <h2>SVG stroke dash-array</h2>
+        <p>
+            <img height="64" align="top" src="img/smile.png"> Multiple values possible<br/>
+            <img height="64" align="top" src="img/smile.png"> Easy to animate<br/>
+            <img height="64" align="top" src="img/b.png"> Effects can be pretty messy...<br/>
+        </p>
+
+    </section>
+    <section class="slide" style="background: #161944;">
+        <h3>Maintainability</h3>
+        <h2>SVG stroke dash-array</h2>
+        <p>
+            <img height="64" align="top" src="img/poop.png">Extra elements needed<br/>
+            <img height="64" align="top" src="img/smile.png"> 7 decelerations<br/>
+            <img height="64" align="top" src="img/smile.png"> Straightforward<br/>
+        </p>
+    </section>
+</section>
+
+<section>
+    <header class="slide">
+        <h1> One more thing..</h1>
+    </header>
+    <section class="slide">
+        <div class="left-col">
+            <div class="pie">
+            </div>
+        </div>
+        <div class="code-col">
+			<textarea class="snippet" data-raw>.pie{}</textarea>
+        </div>
+    </section>
+    <footer class="slide" title="The End">
+        <h2>Thank you!</h2>
+    </footer>
+
+</section>
 <script src="slideshow.js"></script>
 <script src="plugins/css-edit.js"></script>
 <script src="plugins/css-snippets.js"></script>
 <script src="plugins/css-controls.js"></script>
 <script src="plugins/code-highlight.js"></script>
+<script src="plugins/incrementable.js"></script>
+<script src="plugins/conic-gradient.js"></script>
 <script>
 var slideshow = new SlideShow();
 
@@ -250,6 +656,11 @@ for(var i=0; i<snippets.length; i++) {
 var cssControls = document.querySelectorAll('.css-control');
 for(var i=0; i<cssControls.length; i++) {
 	new CSSControl(cssControls[i]);
+}
+
+var txtAreas = document.querySelectorAll('textarea');
+for(var i=0; i<txtAreas.length; i++) {
+	new Incrementable(txtAreas[i]);
 }
 </script>
 	

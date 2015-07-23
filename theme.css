@@ -26,8 +26,8 @@ section > header.slide > h1 {
 }
 
 html {
-	background: black url(img/rainbow-wood.jpg) bottom center;
-	background-size: cover;
+	background: #fff url(img/nilogo.png) bottom left no-repeat;
+	/*background-size: cover;*/
 }
 
 body {
@@ -77,6 +77,10 @@ pre, style, textarea {
 
 textarea {
 	width: 100%;
+	height: 100%;
+	background: none;
+	border: none;
+	outline: none;
 	box-sizing: border-box;
 }
 
