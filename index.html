@@ -14,26 +14,35 @@
 
 <section>
 	<header class="slide">
-		<h1>Let's create a pie chart!</h1>
+		<h1>So.... Pie Charts!</h1>
 	</header>
-	
-	<section class="slide">
-		<h2>Pie charts!</h2>
-		<p>They're anywhere!</p>
-	</section>
-	
-	<section class="slide">
-        <div style="text-align:center"><img src="img/ga.png" height="406" ></div>
-	</section>
 
     <section class="slide">
-        <h2>On Compenies Dashboard</h2>
+        <h1>They're anywhere!</h1>
+        <div class="delayed">
+        <h2>On Google Analytics</h2>
         <div style="text-align:center"><img src="img/ga.png" height="406" ></div>
+        </div>
     </section>
 
+    <section class="slide">
+        <h2>They're anywhere!</h2>
+
+        <h2>On Jira</h2>
+        <div style="text-align:center"><img src="img/jira.png" height="406" ></div>
+    </section>
+
+    <section class="slide">
+        <h1>They're anywhere!</h1>
+
+        <h2>On Companies cook contests </h2>
+        <div style="text-align:center"><img src="img/nicook.jpg" height="406" ></div>
+    </section>
 </section>
 <section>
-
+    <header class="slide">
+        <h1 style="top:33%">How hard can it be to create a CSS pie chart?</h1>
+    </header>
 	<section class="slide">
         <div class="left-col">
 			<style scoped>
@@ -65,8 +74,25 @@
 	</section>
 <section>
 	<header class="slide">
-		<h1>How about pseudo elements?</h1>
+		<h1 style="top:33%">How about pseudo elements?</h1>
 	</header>
+	<section class="slide">
+		<div class="left-col">
+			<div class="pie">
+			</div>
+			</div>
+		</div>
+		<div class="code-col">
+			<textarea class="snippet" data-raw>.pie{
+
+}</textarea>
+		</div>
+
+        <p class="presenter-notes">before: bg, padding, content, position, bottom50, left50<br/>
+        transform: skewY, scaleX, rotate, transform-origin</p>
+
+    </section>
+
     <section class="slide">
         <h2>Some transform clarification</h2>
         <ul>
@@ -89,33 +115,21 @@
             </style>
             <li class="delayed">
                 Scale
-                <div style="animation: 2s infinite scale;background: #22ff1f; "></div>
+                <div style="animation: 2s infinite scale;background: #22ff1f;"></div>
             </li>
             <li class="delayed">
                 Rotate
-                <div style="animation: 2s infinite rotate;background: #ff8f00; "></div>
+                <div style="animation: 2s infinite rotate;background: #ff8f00;"></div>
             </li>
 
             <li class="delayed">
                 Skew
-                <div style="animation: 2s infinite skew;background: #ff0300; "></div>
+                <div style="animation: 2s infinite skew;background: #ff0300;"></div>
             </li>
 
         </ul>
 
     </section>
-	<section class="slide">
-		<div class="left-col">
-			<div class="pie">
-			</div>
-			</div>
-		</div>
-		<div class="code-col">
-			<textarea class="snippet" data-raw>.pie{
-
-}</textarea>
-		</div>
-	</section>
 
 	<section class="slide">
 		<div class="left-col">
@@ -135,9 +149,9 @@ background: yellowgreen;
 padding: 50%;
 content: "";
 position: absolute;
-bottom: 50%;
-left: 50%;
+bottom: 50%;left: 50%;
 transform: skewY(40deg) scaleX(-1) rotate(-90deg);
+
 transform-origin: bottom left;
 }
 
@@ -168,15 +182,17 @@ transform: rotate(-90deg) skew(30deg);
 	<section class="slide">
 		<h2>A good solution holds 3 things:</h2>
 		<ul>
-		<li class="delayed">
-			Flexibility
-		</li>
-			<li class="delayed">
-			Extensibility
-		</li>
-			<li class="delayed">
-			 Maintainability
-		</li></ul>
+            <li class="delayed">
+                Flexibility
+            </li>
+                <li class="delayed">
+                Extensibility
+            </li>
+                <li class="delayed">
+                 Maintainability
+            </li>
+        </ul>
+        <p class="presenter-notes">גמישות, ניתן להרחבה, קל לתחזוקה</p>
 	</section>
 	
 	<section class="slide" style="background: #0e6d15;">
@@ -290,6 +306,8 @@ content: "";
 }
 </textarea>
         </div>
+
+        <p class="presenter-notes">gardient:: before:: display:block, height: 100%; border-radius: 0,100,100,100/50</p>
     </section>
     <section class="slide">
         <div class="left-col">
@@ -357,6 +375,8 @@ transform-origin: left;
 animation: 1s spin linear infinite, 2s color infinite step-end;
 }</textarea>
         </div>
+        <p class="presenter-notes">משחק לשמאל, אנימציות (צבע וסיבוב)ֿ, מעבר לקוביות להדגמת דיבאג אנימציה</p>
+
     </section>
 
     <section class="slide">
@@ -512,7 +532,7 @@ animation-delay: -99s;
         </style>
         <div class="left-col">
             <svg viewBox="0 0 64 64" class="svg-pie">
-               <ci  rcle r="25%" cx="50%" cy="50%"></circle>
+               <circle r="25%" cx="50%" cy="50%"></circle>
             </svg>
         </div>
         <div class="code-col">
@@ -561,17 +581,17 @@ stroke-dasharray: 92 100;
             <circle r="25%" cx="50%" cy="50%" class="s" ></circle>
             <circle r="25%" cx="50%" cy="50%" class="c" ></circle>
         </svg>
-            <pre style="width:35%; float:right;">
-Finance	        14	9%
-HR	            8	5%
-Marketing	    39	25%
-Product	        17	11%
-R&D	            61	39%
-Sales & Biz Dev	14	9%
-Strategy	    2	1%
-CEO	            1	1%
-Sum	            156
-            </pre>
+            <div style="width:45%; float:right;">
+                <table cellspacing="10" border="1">
+                        <tr><td style="color:black">Finance</td>        <td>14</td><td>9%</td></tr>
+                        <tr><td style="color:gold">HR</td>             <td>8</td><td>5%</td></tr>
+                        <tr><td style="color:aqua">Marketing</td>      <td>39</td><td>25%</td></tr>
+                        <tr><td style="color:red">Product</td>      <td>17</td><td>11%</td></tr>
+                        <tr><td style="color:orange">R&D</td>            <td>61</td><td>39%</td></tr>
+                        <tr><td style="color:yellowgreen">Sales & Biz Dev</td><td>14</td><td>9%</td></tr>
+                        <tr><td style="color:lime">Strategy</td>       <td>2</td><td>1%</td></tr>
+                </table>
+            </div>
             			<textarea class="snippet" data-raw>.ni_pie circle{ stroke-width:32; }
 .ni_pie circle{ stroke-width:32; fill:transparent; }
 .f{stroke-dashoffset: 0; stroke:black; stroke-dasharray:9 100;}
@@ -580,8 +600,7 @@ Sum	            156
 .p{stroke-dashoffset: -38; stroke:red; stroke-dasharray:11 100;}
 .r{stroke-dashoffset: -49; stroke:orange; stroke-dasharray:40 100;}
 .b{stroke-dashoffset: -89; stroke:yellowgreen; stroke-dasharray:9 100;}
-.s{stroke-dashoffset: -98; stroke:lime; stroke-dasharray:1 100;}
-.c{stroke-dashoffset: -99; stroke:magenta; stroke-dasharray:1 100;}
+.s{stroke-dashoffset: -98; stroke:lime; stroke-dasharray:2 100;}
                         </textarea>
 
         </div>
@@ -632,12 +651,18 @@ Sum	            156
         <div class="code-col">
 			<textarea class="snippet" data-raw>.pie{}</textarea>
         </div>
+        <p class="presenter-notes">background-image: conic-gradient(yellowgreen 75%, #0ac 0 25%);</p>
     </section>
-    <footer class="slide" title="The End">
-        <h2>Thank you!</h2>
-    </footer>
-
 </section>
+<section>
+    <header class="slide">
+       <h1 style="top:33%;"> Do you really want to use Pie charts?</h1>
+    </header>
+</section>
+
+<footer class="slide" title="The End">
+    <h2>Thank you!</h2>
+</footer>
 <script src="slideshow.js"></script>
 <script src="plugins/css-edit.js"></script>
 <script src="plugins/css-snippets.js"></script>
