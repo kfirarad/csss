@@ -3,14 +3,20 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<title>CSSS: A brief introduction</title>
+	<title>Pie Charts</title>
 	
 	<link href="slideshow.css" rel="stylesheet" />
 	<link href="theme.css" rel="stylesheet" />
 	<link href="talk.css" rel="stylesheet" />
 	<script src="prefixfree.min.js"></script>
 </head>
-<body data-duration="40">
+<body data-duration="45">
+
+<section>
+    <header class="slide">
+        <h1>Hello!</h1>
+    </header>
+</section>
 
 <section>
 	<header class="slide">
@@ -26,7 +32,7 @@
     </section>
 
     <section class="slide">
-        <h2>They're anywhere!</h2>
+        <h1>They're anywhere!</h1>
 
         <h2>On Jira</h2>
         <div style="text-align:center"><img src="img/jira.png" height="406" ></div>
@@ -502,7 +508,7 @@ animation-delay: -99s;
 <section class="slide">
 
     <div class="delayed">
-        <pre><code lang="javascript" data-highlighted="html">&lt;svg viewBox=&quot;0 0 10 100&quot; class=&quot;svg-pie&quot;&gt;
+        <pre><code lang="html" data-highlighted="true">&lt;svg viewBox=&quot;0 0 10 100&quot; class=&quot;svg-pie&quot;&gt;
 &lt;path d=&quot;M 50,0 a 50,50 0 0, 1 40,80 L 50,50 Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt; </code></pre>
         <style scoped>
@@ -530,6 +536,24 @@ animation-delay: -99s;
                 height: 7em;
             }
         </style>
+            <svg viewBox="0 0 64 64" class="svg-pie">
+               <circle r="25%" cx="50%" cy="50%"></circle>
+            </svg>
+			<pre><code lang="html" data-highlighted="true"> &#x3C;svg viewBox=&#x22;0 0 64 64&#x22; class=&#x22;svg-pie&#x22;&#x3E;
+ &#x3C;circle r=&#x22;25%&#x22; cx=&#x22;50%&#x22; cy=&#x22;50%&#x22;&#x3E;
+                &#x3C;/circle&#x3E;
+&#x3C;/svg&#x3E;
+                </code>
+            </pre>
+    </section>
+
+    <section class="slide">
+        <style scoped>
+            .svg-pie{
+                width:7em;
+                height: 7em;
+            }
+        </style>
         <div class="left-col">
             <svg viewBox="0 0 64 64" class="svg-pie">
                <circle r="25%" cx="50%" cy="50%"></circle>
@@ -538,6 +562,12 @@ animation-delay: -99s;
         <div class="code-col">
 			<textarea class="snippet" data-raw>.svg-pie{}</textarea>
         </div>
+
+        <p class="presenter-notes">
+            stroke, stroke-width, stroke-dasharray: 1 100;
+            64 * 0.25 * 2 * pi = 100;<br/>
+
+        </p>
     </section>
     <section class="slide">
         <style scoped>
@@ -564,6 +594,7 @@ stroke-width: 32;
 stroke-dasharray: 92 100;
 }</textarea>
         </div>
+
     </section>
     <section class="slide">
         <style scoped>
